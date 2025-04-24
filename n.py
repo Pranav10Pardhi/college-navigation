@@ -27,15 +27,14 @@ COLLEGE_LOCATIONS = {
 
 # Video paths remain the same
 ROUTE_VIDEOS = {
-    ("Main Gate", "Library"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
-    ("Main Gate", "KSH"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
-    ("Main Gate", "Cricket Ground"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
-    ("Main Gate", "Computer Science Block"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
-    ("Main Gate", "Polytechnic"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
-    ("Main Gate", "Canteen"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
-    ("Library", "Cafeteria"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
-    ("Library", "Auditorium"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
-    ("Cafeteria", "Hostel A"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
+ROUTE_VIDEOS = {
+    ("Main Gate", "Library"): "./videos/main.mp4",
+    ("Main Gate", "KSH"): "./videos/main.mp4",
+    ("Main Gate", "Cricket Ground"): "./videos/main.mp4",
+    ("Main Gate", "Computer Science Block"): "./videos/main.mp4",
+    ("Main Gate", "Polytechnic"): "./videos/main.mp4",
+    ("Main Gate", "Canteen"): "./videos/main.mp4"
+}
 }
 
 # Keep all other functions the same except remove speech-related ones
