@@ -2,8 +2,6 @@ import streamlit as st
 import folium
 import networkx as nx
 from geopy.distance import geodesic
-import speech_recognition as sr
-from gtts import gTTS
 import os
 from streamlit_folium import folium_static
 import qrcode
@@ -16,7 +14,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# College locations with coordinates
+# College locations with coordinates remain the same
 COLLEGE_LOCATIONS = {
     "Main Gate": {"lat":  23.520872, "lon": 77.819182, "type": "entrance"},
     "Library": {"lat": 23.521052, "lon": 77.820847, "type": "academic"},
@@ -27,7 +25,7 @@ COLLEGE_LOCATIONS = {
     "Canteen": {"lat": 23.519005, "lon": 77.819553, "type": "facility"}
 }
 
-# Video paths for routes
+# Video paths remain the same
 ROUTE_VIDEOS = {
     ("Main Gate", "Library"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
     ("Main Gate", "KSH"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
@@ -40,6 +38,7 @@ ROUTE_VIDEOS = {
     ("Cafeteria", "Hostel A"): r"c:\Users\HP\Desktop\py\mejor Project_directory\videos\main.mp4",
 }
 
+# Keep all other functions the same except remove speech-related ones
 def create_navigation_graph():
     G = nx.Graph()
     for location, coords in COLLEGE_LOCATIONS.items():
@@ -77,32 +76,6 @@ try:
 except ImportError:
     VOICE_ENABLED = False
 
-def get_voice_input():
-    if not VOICE_ENABLED:
-        st.error("Voice input is not available. Please type your destination.")
-        return None
-        
-    try:
-        r = sr.Recognizer()
-        with sr.Microphone() as source:
-            st.write("Listening...")
-            audio = r.listen(source)
-            try:
-                text = r.recognize_google(audio)
-                return text
-            except:
-                st.error("Could not understand audio")
-                return None
-    except Exception as e:
-        st.error("Microphone not available")
-        return None
-
-def text_to_speech(text):
-    audio_file = "response.mp3"
-    tts = gTTS(text=text, lang='en')
-    tts.save(audio_file)
-    return audio_file
-
 def get_route_video(start, end):
     if (start, end) in ROUTE_VIDEOS:
         return ROUTE_VIDEOS[(start, end)]
@@ -111,32 +84,26 @@ def get_route_video(start, end):
     return None
 
 def test_video(video_path):
-    try:
         cap = cv2.VideoCapture(video_path)
         ret = cap.isOpened()
         cap.release()
         return ret
     except:
         return False
-
 def generate_qr_code():
     qr = qrcode.QRCode(version=1, box_size=10, border=5)
     # Use current app URL or default to your college website
-    website_url = "https://www.satiengg.in/"  # Replace with your actual website
+    website_url = "https://www.satiengg.in/"  #actual website
     qr.add_data(website_url)
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white")
     qr_path = os.path.join(os.path.dirname(__file__), "app_qr.png")
     img.save(qr_path)
     return qr_path
-
-# ... existing code ...
-
     if st.sidebar.button("Generate QR Code"):
         qr_image = generate_qr_code()
         st.sidebar.image(qr_image, caption="Scan to access website")
-        st.sidebar.markdown("[Visit Website](https://www.satiengg.in/)")  # Replace URL here too
-
+        st.sidebar.markdown("[Visit Website](https://www.satiengg.in/)")  # Replace URL here too    
 
 def main():
     st.title("🎓 College Navigation Assistant")
@@ -146,11 +113,6 @@ def main():
     st.sidebar.title("Navigation Options")
     start_point = st.sidebar.selectbox("Select Start Point", list(COLLEGE_LOCATIONS.keys()))
     end_point = st.sidebar.selectbox("Select Destination", list(COLLEGE_LOCATIONS.keys()))
-    
-    if st.sidebar.button("🎤 Use Voice Input"):
-        voice_text = get_voice_input()
-        if voice_text:
-            st.sidebar.write(f"You said: {voice_text}")
     
     if st.sidebar.button("Find Route"):
         try:
@@ -173,8 +135,6 @@ def main():
                 folium_static(m)
                 directions = f"Route from {start_point} to {end_point}: " + " → ".join(path)
                 st.write(directions)
-                audio_file = text_to_speech(directions)
-                st.audio(audio_file)
             
             with col2:
                 video_path = get_route_video(start_point, end_point)
