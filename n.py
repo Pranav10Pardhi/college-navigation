@@ -27,14 +27,15 @@ COLLEGE_LOCATIONS = {
 
 # Video paths remain the same
 ROUTE_VIDEOS = {
-ROUTE_VIDEOS = {
-    ("Main Gate", "Library"): "./videos/main.mp4",
-    ("Main Gate", "KSH"): "./videos/main.mp4",
-    ("Main Gate", "Cricket Ground"): "./videos/main.mp4",
-    ("Main Gate", "Computer Science Block"): "./videos/main.mp4",
-    ("Main Gate", "Polytechnic"): "./videos/main.mp4",
-    ("Main Gate", "Canteen"): "./videos/main.mp4"
-}
+    ("Main Gate", "Library"): "./static/videos/main.mp4",
+    ("Main Gate", "KSH"): "./static/videos/main.mp4",
+    ("Main Gate", "Cricket Ground"): "./static/videos/main.mp4",
+    ("Main Gate", "Computer Science Block"): "./static/videos/main.mp4",
+    ("Main Gate", "Polytechnic"): "./static/videos/main.mp4",
+    ("Main Gate", "Canteen"): "./static/videos/main.mp4",
+    ("Library", "Cafeteria"): "./static/videos/main.mp4",
+    ("Library", "Auditorium"): "./static/videos/main.mp4",
+    ("Cafeteria", "Hostel A"): "./static/videos/main.mp4"
 }
 
 # Keep all other functions the same except remove speech-related ones
