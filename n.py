@@ -27,15 +27,15 @@ COLLEGE_LOCATIONS = {
 
 # Video paths remain the same
 ROUTE_VIDEOS = {
-    ("Main Gate", "Library"): "./static/videos/main.mp4",
-    ("Main Gate", "KSH"): "./static/videos/main.mp4",
-    ("Main Gate", "Cricket Ground"): "./static/videos/main.mp4",
-    ("Main Gate", "Computer Science Block"): "./static/videos/main.mp4",
-    ("Main Gate", "Polytechnic"): "./static/videos/main.mp4",
-    ("Main Gate", "Canteen"): "./static/videos/main.mp4",
-    ("Library", "Cafeteria"): "./static/videos/main.mp4",
-    ("Library", "Auditorium"): "./static/videos/main.mp4",
-    ("Cafeteria", "Hostel A"): "./static/videos/main.mp4"
+    ("Main Gate", "Library"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
+    ("Main Gate", "KSH"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
+    ("Main Gate", "Cricket Ground"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
+    ("Main Gate", "Computer Science Block"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
+    ("Main Gate", "Polytechnic"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
+    ("Main Gate", "Canteen"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
+    ("Library", "Cafeteria"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
+    ("Library", "Auditorium"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
+    ("Cafeteria", "Hostel A"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos"
 }
 
 # Keep all other functions the same except remove speech-related ones
