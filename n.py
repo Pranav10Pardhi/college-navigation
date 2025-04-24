@@ -71,16 +71,31 @@ def create_map():
         ).add_to(m)
     return m
 
+try:
+    import speech_recognition as sr
+    VOICE_ENABLED = True
+except ImportError:
+    VOICE_ENABLED = False
+
 def get_voice_input():
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        st.write("Listening...")
-        audio = r.listen(source)
-        try:
-            text = r.recognize_google(audio)
-            return text
-        except:
-            return None
+    if not VOICE_ENABLED:
+        st.error("Voice input is not available. Please type your destination.")
+        return None
+        
+    try:
+        r = sr.Recognizer()
+        with sr.Microphone() as source:
+            st.write("Listening...")
+            audio = r.listen(source)
+            try:
+                text = r.recognize_google(audio)
+                return text
+            except:
+                st.error("Could not understand audio")
+                return None
+    except Exception as e:
+        st.error("Microphone not available")
+        return None
 
 def text_to_speech(text):
     audio_file = "response.mp3"
