@@ -84,6 +84,7 @@ def get_route_video(start, end):
     return None
 
 def test_video(video_path):
+    try:
         cap = cv2.VideoCapture(video_path)
         ret = cap.isOpened()
         cap.release()
