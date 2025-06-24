@@ -25,9 +25,9 @@ COLLEGE_LOCATIONS = {
     "Canteen": {"lat": 23.519005, "lon": 77.819553, "type": "facility"}
 }
 
-# Video paths remain the same
+# Video paths remain the same    "videos/main.mp4"
 ROUTE_VIDEOS = {
-    ("Main Gate", "Library"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
+    ("Main Gate", "Library"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos/main.mp4",
     ("Main Gate", "KSH"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
     ("Main Gate", "Cricket Ground"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
     ("Main Gate", "Computer Science Block"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
