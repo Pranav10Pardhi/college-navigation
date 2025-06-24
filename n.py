@@ -10,7 +10,7 @@ import cv2
 # Set page configuration
 st.set_page_config(
     page_title="College Navigation Assistant",
-    page_icon="🎓",
+    page_icon="__🎓__",
     layout="wide"
 )
 
