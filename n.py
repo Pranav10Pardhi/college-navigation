@@ -10,7 +10,7 @@ import cv2
 # Set page configuration
 st.set_page_config(
     page_title="College Navigation Assistant",
-    page_icon="__🎓__",
+    page_icon="🎓",
     layout="wide"
 )
 
@@ -27,7 +27,7 @@ COLLEGE_LOCATIONS = {
 
 # Video paths remain the same    "videos/main.mp4"
 ROUTE_VIDEOS = {
-    ("Main Gate", "Library"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos/main.mp4",
+    ("Main Gate", "Library"): "videos/main.mp4",
     ("Main Gate", "KSH"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
     ("Main Gate", "Cricket Ground"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
     ("Main Gate", "Computer Science Block"): "https://github.com/Pranav10Pardhi/college-navigation/tree/main/videos",
