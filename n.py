@@ -9,7 +9,7 @@ import cv2
 
 # Set page configuration
 st.set_page_config(
-    page_title="College Navigation Assistant",
+    page_title="College_Navigation_Assistant",
     page_icon="🎓",
     layout="wide"
 )
